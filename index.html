@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Burusu Shanmukha Kumar | RF &amp; Antenna Design Portfolio</title>
+<meta name="description" content="Portfolio of Burusu Shanmukha Kumar: HF direction-finding loop arrays and microstrip patch arrays, simulated in CST Studio Suite.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#eef2f4;--card:#fff;--ink:#14202b;--mute:#566574;--line:#d3dce2;--sig:#0b6e8a;--plot:#d6362b;--serif:'Source Serif 4',Georgia,serif;--sans:'IBM Plex Sans',system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root{--paper:#0f1a22;--card:#16232d;--ink:#e6edf2;--mute:#9bacb9;--line:#27384a;--sig:#59b8d3;--plot:#ff6b5e}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.65 var(--sans)}
+a{color:var(--sig)}a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--plot);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+header.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;gap:20px;align-items:center;height:52px;overflow-x:auto;white-space:nowrap}
+header.top b{font:600 15px var(--serif);margin-right:auto}
+header.top a{color:var(--mute);text-decoration:none;font-size:14px}header.top a:hover{color:var(--ink)}
+.hero{padding:56px 0 40px;background:linear-gradient(var(--line) 1px,transparent 1px) 0 0/100% 32px,linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/32px 100%;background-color:var(--paper);border-bottom:1px solid var(--line)}
+.hero .wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:40px;align-items:center}
+h1{font:700 clamp(38px,6vw,64px)/1.02 var(--serif);margin:0 0 18px;letter-spacing:-.02em}
+.lead{font-size:18px;max-width:34em;margin:0 0 22px}
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-block;padding:10px 18px;border-radius:4px;border:1.5px solid var(--ink);color:var(--ink);text-decoration:none;font-weight:500;font-size:15px}
+.btn.p{background:var(--ink);color:var(--paper)}
+.cmp{background:var(--card);border:1px solid var(--line);padding:12px;border-radius:4px}
+.sl{position:relative;aspect-ratio:612/452;overflow:hidden;background:#cfd6dc;user-select:none}
+.sl img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.sl .top{clip-path:inset(0 calc(100% - var(--p,50%)) 0 0)}
+.sl .bar{position:absolute;top:0;bottom:0;left:var(--p,50%);width:2px;background:var(--plot)}
+.sl .tag{position:absolute;bottom:8px;font-size:12px;font-weight:600;background:var(--ink);color:var(--paper);padding:2px 8px;border-radius:3px}
+.sl .tag.l{left:8px}.sl .tag.r{right:8px}
+.cmp input{width:100%;margin:10px 0 2px;accent-color:var(--plot)}
+.cmp p{margin:0;font-size:13px;color:var(--mute)}
+section{padding:64px 0;border-bottom:1px solid var(--line)}
+h2{font:700 clamp(26px,3.6vw,36px)/1.15 var(--serif);margin:0 0 6px;letter-spacing:-.01em}
+.sub{color:var(--mute);margin:0 0 28px;max-width:46em}
+h3{font:600 20px var(--serif);margin:28px 0 8px}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);margin:18px 0 28px}
+.facts div{background:var(--card);padding:14px 16px}
+.facts b{display:block;font:700 24px var(--serif)}.facts span{font-size:13px;color:var(--mute)}
+figure{margin:0}figure img{width:100%;display:block;background:#fff;border:1px solid var(--line)}
+figcaption{font-size:13px;color:var(--mute);margin-top:6px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:20px 0}
+.note{border-left:4px solid var(--plot);background:var(--card);padding:14px 18px;margin:20px 0}
+table{border-collapse:collapse;width:100%;font-size:14.5px;background:var(--card)}
+th,td{border:1px solid var(--line);padding:8px 12px;text-align:left;vertical-align:top}th{background:var(--ink);color:var(--paper);font-weight:600}
+ul{padding-left:20px}li{margin:5px 0}
+.tl{border-left:2px solid var(--line);padding-left:20px;margin-left:4px}.tl h3{margin-top:0}.tl>div{margin-bottom:26px;position:relative}
+.tl>div::before{content:"";position:absolute;left:-27px;top:8px;width:10px;height:10px;border-radius:50%;background:var(--sig)}
+.when{font-size:14px;color:var(--mute);margin:0 0 6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:0;list-style:none}.chips li{background:var(--card);border:1px solid var(--line);padding:3px 11px;border-radius:99px;font-size:14px;margin:0}
+footer{padding:40px 0 60px;color:var(--mute);font-size:14px}
+@media(max-width:800px){.hero .wrap,.cols,.grid2{grid-template-columns:1fr}.hero{padding-top:36px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap"><b>Shanmukha Kumar Burusu</b><a href="#hfdf">HF DF array</a><a href="#patch">Patch array</a><a href="#hardware">Hardware</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a></div></header>
+
+<main>
+<div class="hero"><div class="wrap">
+  <div>
+    <h1>Antennas that behave the way the simulation says they should.</h1>
+    <p class="lead">I'm Shanmukha Kumar Burusu, a final-year Electronics and Communication Engineering student working on RF engineering, antenna design and computational electromagnetics. I simulate in CST Studio Suite and Ansys HFSS, and I document what the solver shows, including where a design fails.</p>
+    <div class="btns"><a class="btn p" href="assets/Shanmukha_Kumar_Burusu_Portfolio.pdf">Download portfolio (PDF)</a><a class="btn" href="#contact">Get in touch</a></div>
+  </div>
+  <div class="cmp" aria-label="Before and after comparison of the 1x4 patch array radiation pattern">
+    <div class="sl" id="sl" style="--p:50%">
+      <img src="assets/ms_3db.jpg" alt="Final F4BM array: single broadside beam" width="612" height="452">
+      <img class="top" src="assets/ms_3da.jpg" alt="Rogers iteration: split beam" width="612" height="452">
+      <div class="bar"></div><span class="tag l">A: split beam, 9.35 dBi</span><span class="tag r">B: single beam, 12.88 dBi</span>
+    </div>
+    <input id="rng" type="range" min="0" max="100" value="50" aria-label="Drag to compare iteration A and iteration B">
+    <p>Drag to compare the same 1x4 array before and after the feed-phase fix (CST 3D realised gain, 2.4 and 2.45 GHz).</p>
+  </div>
+</div></div>
+
+<section id="hfdf"><div class="wrap">
+  <h2>Compact HF direction-finding loop array, 1 to 30 MHz</h2>
+  <p class="sub">Summer research at NIT Calicut (May to Jul 2026), supervised by Dr. Karthik R. A Watson-Watt array of two crossed loops and a top-hat monopole, limited to a 10 m envelope.</p>
+  <div class="facts">
+    <div><b>1 to 30 MHz</b><span>band simulated in CST (FIT, time domain)</span></div>
+    <div><b>10 m</b><span>monopole height, 5 m top-hat, 5 m ground plane</span></div>
+    <div><b>ka = 0.033</b><span>at 1 MHz: deep electrically-small regime</span></div>
+    <div><b>about 0 dB</b><span>radiation loss at 15.5 and 30 MHz</span></div>
+  </div>
+  <div class="cols">
+    <div><h3 style="margin-top:0">The question</h3><p>At 1 MHz a wavelength is 300 m, so a quarter-wave antenna would be 75 m tall. The project asked how much 360 degree bearing capability a 10 m passive structure can deliver across the whole HF band, and where physics stops it.</p>
+    <p>I simulated the bare structure with a single 50 ohm port, lossy aluminium and no matching network, so the results show the true reactive limits that a later matching network or DSP stage must be designed against.</p></div>
+    <div><h3 style="margin-top:0">What the solver showed</h3><ul>
+      <li>A parasitic resonance near 12 MHz where S11 approaches 0 dB.</li>
+      <li>Two better-matched regions, roughly 5 to 9 MHz and 18 to 25 MHz.</li>
+      <li>At 30 MHz the loop circumference equals one wavelength and the Figure-8 splinters into a cloverleaf, so clean-DF loops must stay below half a wavelength.</li></ul></div>
+  </div>
+  <div class="grid2">
+    <figure><img src="assets/hf_s11.jpg" alt="S11 across 1 to 30 MHz" loading="lazy"><figcaption>S11, 1 to 30 MHz: near 0 dB around 12 MHz, best near 6.7 MHz (-8.2 dB) and 22.5 MHz (-11.3 dB).</figcaption></figure>
+    <figure><img src="assets/hf_z.jpg" alt="Port impedance magnitude" loading="lazy"><figcaption>Port impedance: steep reactive rise toward 1 MHz, then about 65 to 75 ohm above 20 MHz.</figcaption></figure>
+    <figure><img src="assets/hf_p10.jpg" alt="Polar gain at 10 MHz" loading="lazy"><figcaption>Gain at 10 MHz (phi = 90): Figure-8 style response, 2.87 dBi.</figcaption></figure>
+    <figure><img src="assets/hf_p30.jpg" alt="Polar gain at 30 MHz" loading="lazy"><figcaption>Gain at 30 MHz: the pattern fragments at one-wavelength circumference, 3.99 dBi.</figcaption></figure>
+  </div>
+  <div class="grid2">
+    <figure><img src="assets/hf_3d15.jpg" alt="3D far-field at 15.5 MHz" loading="lazy"><figcaption>3D far-field at 15.5 MHz: 5.66 dBi.</figcaption></figure>
+    <figure><img src="assets/hf_flow.jpg" alt="Simulation workflow diagram" loading="lazy" style="max-width:260px;margin:auto"><figcaption>Simulation workflow from incoming skywave to extracted S11, VSWR and far-field.</figcaption></figure>
+  </div>
+  <p><strong>Next steps:</strong> tunable LC matching at the feed to recover 1 to 5 MHz, a fabricated aluminium-tube prototype measured in an anechoic chamber, a stacked array for NVIS elevation, and MUSIC or ESPRIT bearing estimation.</p>
+</div></section>
+
+<section id="patch"><div class="wrap">
+  <h2>Dual-band 1x4 microstrip patch array</h2>
+  <p class="sub">Aryatronix Pvt. Ltd. (Jul 2026). A corporate-fed array for 2.4 and 5.8 GHz RF counter-UAS detection. Results shown here are the 2.4 GHz band.</p>
+  <figure><img src="assets/ms_model.jpg" alt="CST model of the 1x4 patch array" loading="lazy"><figcaption>CST model: four patches on a corporate feed network.</figcaption></figure>
+  <div class="cols" style="margin-top:20px">
+    <div><h3 style="margin-top:0">Problem and fix</h3><ul>
+      <li><b>Symptom:</b> the far-field split into two lobes instead of one broadside beam.</li>
+      <li><b>Cause:</b> non-uniform phase reaching the four patches.</li>
+      <li><b>Fix:</b> a symmetric corporate feed giving uniform 0 degree phase at every element.</li>
+      <li><b>Isolation:</b> a Defected Ground Structure under the feed to cut mutual coupling and surface-wave loss.</li>
+      <li><b>Tuning:</b> three parametric sweeps to push return loss below -15 dB in both bands.</li></ul></div>
+    <div><h3 style="margin-top:0">Iteration A vs B (2.4 GHz band)</h3>
+    <table><tr><th>Metric</th><th>A: Rogers</th><th>B: F4BM</th></tr>
+      <tr><td>Best S11</td><td>-26.3 dB</td><td>-43.7 dB</td></tr>
+      <tr><td>Gain at 2.4 GHz</td><td>9.35 dBi</td><td>11.35 dBi</td></tr>
+      <tr><td>Peak gain</td><td>9.35 dBi</td><td>12.88 dBi (2.45 GHz)</td></tr>
+      <tr><td>Radiation eff. at 2.4 GHz</td><td>-1.28 dB</td><td>-0.57 dB</td></tr>
+      <tr><td>Beam</td><td>Split</td><td>Single broadside</td></tr></table></div>
+  </div>
+  <div class="grid2">
+    <figure><img src="assets/ms_s11a.jpg" alt="S11 of iteration A" loading="lazy"><figcaption>A: four shallow resonances between 2.18 and 2.41 GHz.</figcaption></figure>
+    <figure><img src="assets/ms_s11b.jpg" alt="S11 of iteration B" loading="lazy"><figcaption>B: two deep dips, -42.5 and -43.7 dB.</figcaption></figure>
+    <figure><img src="assets/ms_polar.jpg" alt="Polar gain of final array at 2.45 GHz" loading="lazy"><figcaption>B at 2.45 GHz (phi = 90): 12.5 dBi, 17.3 degree half-power width, side lobes -11.7 dB.</figcaption></figure>
+    <figure><img src="assets/ms_eff.jpg" alt="Efficiency of final array" loading="lazy"><figcaption>B: radiation efficiency about -0.6 to -0.7 dB across 2.4 to 2.5 GHz.</figcaption></figure>
+  </div>
+</div></section>
+
+<section id="hardware"><div class="wrap">
+  <h2>Embedded hardware projects</h2>
+  <div class="cols">
+    <div><h3 style="margin-top:0">Wearable telemetry and accident detection (2024)</h3><p class="when">Embedded C, Arduino, GPS, GSM, accelerometer</p>
+    <ul><li>Accelerometer streams detect high-impact collisions while filtering normal motion.</li><li>Interrupt-driven firmware parses GPS NMEA sentences and sends location-tagged SOS alerts over GSM.</li><li>Sensing, microcontroller and RF modules on a compact wearable with regulated power.</li></ul></div>
+    <div><h3 style="margin-top:0">Optoelectronic color sorter (2023)</h3><p class="when">Arduino, MATLAB, TCS3200, servo motors</p>
+    <ul><li>Samples reflected RGB components with a TCS3200 light-to-frequency sensor.</li><li>MATLAB handles threshold calibration and signal conditioning, driving servo actuators.</li><li>About 95% classification accuracy.</li></ul></div>
+  </div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <h2>Experience and education</h2>
+  <div class="tl" style="margin-top:24px">
+    <div><h3>RF and Antenna Engineering Intern, Aryatronix Pvt. Ltd.</h3><p class="when">Jul 2026</p><p>Symmetric feed redesign, DGS isolation and parametric tuning of a 2.4 / 5.8 GHz patch array.</p></div>
+    <div><h3>Summer Research Intern, NIT Calicut</h3><p class="when">May to Jul 2026</p><p>HF DF loop array design, CST VBA automation, and an 18-figure technical report.</p></div>
+    <div><h3>B.Tech, Electronics and Communication Engineering, JNTUA College of Engineering, Pulivendula</h3><p class="when">Aug 2023 to May 2027, CGPA 7.8 / 10</p></div>
+    <div><h3>Technical Lead (RF), E-CHIP Technical Club</h3><p class="when">Peer-learning workshops on applied electromagnetics</p></div>
+  </div>
+  <p><b>Training and exposure:</b> FDP on Antenna and RF Circuits Design (Walchand College of Engineering, Jul 2026); NPTEL Microsensors and Nanosensors; NIELIT Basics of MATLAB; SDSC SHAR (ISRO) and UCIL visits; METIX 2026, Simulation Rush (IIT Hyderabad), Arduino workshop (IIT Bombay Techfest).</p>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <h2>Skills</h2>
+  <h3>RF and electromagnetics</h3><ul class="chips"><li>Loop and microstrip patch antennas</li><li>Phased arrays</li><li>S-parameters and VSWR</li><li>Smith chart matching</li><li>Corporate feed networks</li><li>Defected Ground Structures</li></ul>
+  <h3>Tools</h3><ul class="chips"><li>CST Studio Suite</li><li>Ansys HFSS</li><li>VBA macros for CST</li><li>NI Multisim</li><li>Altium Designer</li><li>MATLAB</li><li>Python</li><li>C / C++ / Embedded C</li><li>Arduino</li><li>ESP32</li><li>Raspberry Pi</li></ul>
+</div></section>
+
+<section id="contact" style="border:0"><div class="wrap">
+  <h2>Contact</h2>
+  <p class="sub">Open to research internships in RF, antennas and electromagnetic modelling.</p>
+  <div class="btns"><a class="btn p" href="mailto:burushanmukhakumar@gmail.com">burushanmukhakumar@gmail.com</a><a class="btn" href="https://linkedin.com/in/shanmukha-burusu">LinkedIn</a><a class="btn" href="assets/Shanmukha_Kumar_Burusu_Portfolio.pdf">Portfolio PDF</a></div>
+</div></section>
+</main>
+<footer><div class="wrap">All results are simulation outputs from CST Studio Suite. Pulivendula, Andhra Pradesh, India.</div></footer>
+<script>
+(function(){var s=document.getElementById('sl'),r=document.getElementById('rng');
+r.addEventListener('input',function(){s.style.setProperty('--p',r.value+'%')});})();
+</script>
+</body>
+</html>
